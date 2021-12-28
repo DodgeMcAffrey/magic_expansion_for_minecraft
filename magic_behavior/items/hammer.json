@@ -73,6 +73,12 @@
                         "swing": {}
                     },
                     {
+                        "minecraft:record": {
+                            "sound_event": "cat",
+                            "comparator_signal": 8
+                        }
+                    },
+                    {
                         "shoot": {
                             "projectile": "magic:frostball",
                             "angle_offset": 0,
@@ -83,7 +89,7 @@
                         "run_command": {
                             "command": [
                                 "execute @s ~ ~1 ~ particle minecraft:ice_evaporation_emitter ^ ^ ^1",
-                                "playsound mob.evocation_illager.cast_spell @s ~ ~ ~ 0.3"
+                                "playsound mob.cat.meow @s ~ ~ ~ 0.3"
                             ],
                             "target": "holder"
                         }

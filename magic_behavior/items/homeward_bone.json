@@ -63,6 +63,7 @@
             "return_home": {
                 "sequence": [
                     {
+                        "weight": 1,
                         "damage": {
                             "type": "durability",
                             "amount": 1,
@@ -70,9 +71,11 @@
                         }
                     },
                     {
+                        "weight": 2,
                         "swing": {}
                     },
                     {
+                        "weight": 3,
                         "run_command": {
                             "command": [
                                 "gamerule keepinventory true"
@@ -81,6 +84,7 @@
                         }
                     },
                     {
+                        "weight": 4,
                         "run_command": {
                             "command": [
                                 "kill @s"
@@ -89,6 +93,7 @@
                         }
                     },
                     {
+                        "weight": 5,
                         "run_command": {
                             "command": [
                                 "gamerule keepinventory false"
