@@ -1,0 +1,26 @@
+{
+  "format_version": "1.12",
+  "animation_controllers": {
+    "controller.animation.hammer_thrown": {
+			"states": {
+				"default": {
+					"on_entry": [
+						"/tag @p add hammerOwner",
+						"/playsound cat @a ~ ~ ~ 1.0 1.0"
+					],
+					"animations": [
+						"mini_delay"
+					],
+					"transitions": [ { "repeat_A": "query.any_animation_finished" } ]
+				},
+				"repeat_A": {
+					"on_entry": [
+						"/playsound cat @a ~ ~ ~ 2.0"
+					],
+					"transitions": [ { "repeat_B": "1" } ]
+				},
+				"repeat_B": {
+					"transitions": [ { "repeat_A": "1" } ]
+				}
+			}
+		},

@@ -1,0 +1,21 @@
+{
+	"format_version": "1.12",
+	"animations": {
+		"animation.magic.hammer_drop_beh": {
+			"animation_length": 0.1,
+			"loop": true,
+			"timeline": {
+				"0.0": [
+					"/give @p[tag=hammerOwner] magic:hammer",
+					"/tag @p[tag=hammerOwner] remove hammerOwner",
+					"/playsound random.pop @a ~ ~ ~",
+					"@s minecraft:event_despawn"
+				]
+			}
+		},	
+		"animation.magic.mini_delay": {
+			"animation_length": 0.1,
+			"loop": false
+		}
+	}
+}

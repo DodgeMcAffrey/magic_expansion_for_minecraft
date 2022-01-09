@@ -1,0 +1,156 @@
+{
+	"format_version": "1.12",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "magic:hammer_returning",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"scripts": { "animate": [ "cont_hammer_return" ] },
+			"animations": {
+				"cont_hammer_return": "controller.animation.hammer_returning",
+				"hammer_returned": "animation.magic.hammer_drop_beh"
+			}
+		},
+
+		"component_groups": {
+			"minecraft:returned": {
+				"minecraft:variant": {
+					"value": 1
+				}
+			},
+			"minecraft:despawn": {
+				"minecraft:type_family": {
+					"family": [ "returned_hammer" ]
+				}
+			},
+			"minecraft:drop": {
+				"minecraft:type_family": {
+					"family": [ "returned_hammer" ]
+				},
+				"minecraft:spawn_entity": {
+					"entities": {
+						"min_wait_time": 0,
+						"max_wait_time": 0,
+						"single_use": true,
+						"num_to_spawn": 1,
+						"spawn_item": "magic:hammer"
+					}
+				}
+			}
+		},
+
+		"components": {
+			"minecraft:type_family": {
+				"family": [ "inanimate" ]
+			},
+			"minecraft:despawn": {
+				"filters": {
+					"all_of": [
+						{
+							"test": "is_family",
+							"subject": "self",
+							"value": "returned_hammer"
+						}
+					]
+				}
+			},
+			"minecraft:entity_sensor": {
+				"sensor_range": 256.0,
+				"require_all": true,
+				"event_filters": {
+					"none_of": [
+						{
+							"test": "has_tag",
+							"subject": "other",
+							"value": "hammerOwner"
+						}
+					]
+				},
+				"event": "minecraft:event_drop"
+			},
+			"minecraft:push_through": {
+				"value": 1
+			},
+			"minecraft:collision_box": {
+				"width": 0.4,
+				"height": 0.4
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1.0
+			},
+			"minecraft:health": {
+				"value": 1000
+			},
+			"minecraft:spell_effects": {
+				"add_effects": [
+					{
+						"effect": "resistance",
+						"duration": 70,
+						"duration": 7000,
+						"visible": false
+					},
+					{
+						"effect": "instant_health",
+						"duration": 70,
+						"duration": 7000,
+						"visible": false
+					}
+				]
+			},
+			"minecraft:behavior.float": {
+				"priority": 0
+			},
+			"minecraft:physics": {
+				"has_collision": false,
+				"has_gravity": false
+			},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:environment_sensor": {
+				"triggers": [
+					{
+						//Boomerang returned
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_tag",
+									"operator": "==",
+									"value": "hammerReturned"
+								}
+							]
+						},
+						"event": "minecraft:event_returned"
+					}
+				]
+			}
+		},
+
+		"events": {
+			"minecraft:event_returned": {
+				"add": { "component_groups": [ "minecraft:returned" ] }
+			},
+			"minecraft:event_despawn": {
+				"add": { "component_groups": [ "minecraft:despawn" ] }
+			},
+			"minecraft:event_drop": {
+				"sequence": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_variant",
+									"operator": "!=",
+									"value": 1
+								}
+							]
+						},
+						"add": { "component_groups": [ "minecraft:drop" ] }
+					}
+				]
+			}
+		}
+	}
+}

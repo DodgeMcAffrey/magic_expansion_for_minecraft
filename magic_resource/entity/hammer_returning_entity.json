@@ -1,0 +1,24 @@
+{
+	"format_version": "1.12",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "magic:hammer_returning",
+			"materials": {
+				"default": "magic_hammer_translucent"
+			},
+			"textures": {
+				"default": "textures/items/hammer"
+			},
+			"geometry": {
+				"default": "geometry.magic.hammer"
+			},
+			"animations": {
+				"spin": "animation.magic.hammer.spin"
+			},
+			"scripts": {
+				"animate": [ "spin" ]
+			},
+			"render_controllers": [ "controller.render.translucence" ]
+		}
+	}
+}

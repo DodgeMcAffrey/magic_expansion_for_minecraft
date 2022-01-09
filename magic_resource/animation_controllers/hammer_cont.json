@@ -1,0 +1,33 @@
+{
+	"format_version": "1.12.0",
+	"animation_controllers": {
+		"controller.animation.magic.hammer_accent_bd": {
+			"states": {
+				"default": {
+					"particle_effects": [
+						{
+							"effect": "accent", 
+							"locator": "corner_b"
+						},
+						{
+							"effect": "accent", 
+							"locator": "corner_d"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.magic.hammer_trail": {
+			"states": {
+				"default": {
+					"particle_effects": [
+						{
+							"effect": "trail", 
+							"locator": "center"
+						}
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,27 @@
+{
+  "item.magic.hammer.throw": {
+    "sounds": [
+      {"name": "sounds/hammer/throw"}
+    ]
+  },
+  "item.magic.hammer.hit": {
+    "sounds": [
+      {"name": "sounds/hammer/hit_ground"}
+    ]
+  },
+  "item.magic.hammer.hit_entity": {
+    "sounds": [
+      {"name": "sounds/hammer/hit_entity"}
+    ]
+  },
+  "item.magic.hammer.fly": {
+    "sounds": [
+      {"name": "sounds/hammer/fly"}
+    ]
+  },
+  "item.magic.hammer.catch": {
+    "sounds": [
+      {"name": "sounds/hammer/catch"}
+    ]
+  }
+}

@@ -9,7 +9,9 @@
             "minecraft:icon": {
                 "texture": "hammer"
             },
-            "minecraft:display_name": {},
+            "minecraft:display_name": {
+                "value": "Hammer"
+            },
             "minecraft:creative_category": {
                 "parent": "itemGroup.name.equipment"
             },
@@ -39,11 +41,11 @@
                     }
                 ]
             },
-            "minecraft:on_use": {
-                "on_use": {
-                    "event": "throw_hammer",
-                    "target": "self"
-                }
+            "minecraft:throwable": {
+                "do_swing_animation": true
+            },
+            "minecraft:projectile": {
+                "projectile_entity": "magic:hammer_thrown"
             },
             "minecraft:cooldown": {
                 "category": "hammer",
@@ -60,42 +62,6 @@
             "minecraft:can_destroy_in_creative": false
         },
         "events": {
-            "throw_hammer": {
-                "sequence": [
-                    {
-                        "damage": {
-                            "type": "durability",
-                            "amount": 1,
-                            "target": "self"
-                        }
-                    },
-                    {
-                        "swing": {}
-                    },
-                    {
-                        "minecraft:record": {
-                            "sound_event": "cat",
-                            "comparator_signal": 8
-                        }
-                    },
-                    {
-                        "shoot": {
-                            "projectile": "magic:frostball",
-                            "angle_offset": 0,
-                            "launch_power": 1
-                        }
-                    },
-                    {
-                        "run_command": {
-                            "command": [
-                                "execute @s ~ ~1 ~ particle minecraft:ice_evaporation_emitter ^ ^ ^1",
-                                "playsound mob.cat.meow @s ~ ~ ~ 0.3"
-                            ],
-                            "target": "holder"
-                        }
-                    }
-                ]
-            },
             "yes:damage_event": {
                 "damage": {
                     "type": "durability",

@@ -1,0 +1,28 @@
+{
+	"individual_event_sounds" : {
+		"events" :{
+			"item.magic.hammer.throw": {
+				"sound": "item.magic.hammer.throw",
+				"volume": 1.0,
+				"pitch": [ 0.7, 1.1 ]
+			},
+			"item.magic.hammer.hit": {
+				"sound": "item.magic.hammer.hit",
+				"volume": 1.0,
+				"pitch": [0.9, 1.1]
+			},
+			"item.magic.hammer.fly": {
+				"sound": "item.magic.hammer.fly",
+				"volume": 1.0,
+				"pitch": [0.8, 1.0]
+			},
+			"item.magic.hammer.catch": {
+				"sound": "item.magic.hammer.catch",
+				"volume": 1.0,
+				"pitch": [0.8, 1.0]
+			},
+			"tripod": {"sound": "item.magic.hammer.hit", "volume": 2.0, "pitch": [0.9, 1.1]},
+			"camera.take_picture": {"sound": "item.magic.hammer.hit_entity", "volume": 1.0, "pitch" : 1.0 }
+		}
+	}
+}
